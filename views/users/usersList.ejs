@@ -16,7 +16,6 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>password</th>
               <th>Email</th>
               <th>Actions</th>
             </tr>
@@ -25,7 +24,6 @@
             <% users.forEach(user=>{%>
             <tr>
               <td><%=user.name%></td>
-              <td><%=user.password%></td>
               <td><%=user.email%></td>
               <td>
                 <a href="/users/userRegister/<%= user.id %>" class="edit-button"
