@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/recet-styles.css" />
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link rel="stylesheet" href="/stylesheets/about.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('sections/header', {title: 'User form'})%>
+      <main class="page">
+        <section class="about-section">
+          <h2>Who We Are</h2>
+          <p>
+            At Christmas Lights Co., we bring the joy of the holiday season to
+            your home with our stunning selection of Christmas lights. Our
+            passion for festive decor drives us to provide the highest quality
+            products that transform any space into a winter wonderland.
+          </p>
+          <img
+            src="images/christmas-lights.webp"
+            alt="Christmas Lights"
+            class="hero-image"
+          />
+
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to spread joy and create memorable experiences
+            through beautiful lighting displays. We believe that every home
+            deserves to sparkle during the holiday season, and we are committed
+            to helping you find the perfect lights to illuminate your
+            celebrations.
+          </p>
+
+          <h2>Why Choose Us?</h2>
+          <ul class="features-list">
+            <li>✨ High-quality, durable lights</li>
+            <li>✨ Wide range of styles and colors</li>
+            <li>✨ Exceptional customer service</li>
+            <li>✨ Fast and reliable shipping</li>
+          </ul>
+        </section>
+      </main>
+
+      <%-include('sections/footer', {title: 'footer'})%>
+    </div>
+  </body>
+</html>

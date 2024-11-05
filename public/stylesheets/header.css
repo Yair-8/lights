@@ -1,0 +1,26 @@
+header {
+  background-color: #238443;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
+}
+
+.nav-list li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-list li a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: #7ff5ba;
+}
+
+.site-title {
+  margin: 10px 0 0;
+  font-size: 2em;
+}

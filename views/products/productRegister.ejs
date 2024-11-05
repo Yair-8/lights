@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/recet-styles.css" />
+    <link rel="stylesheet" href="/stylesheets/form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="error-msg">
+        <% if (errors?.length > 0) { %>
+        <ul class="error-msg">
+          <% errors.forEach(function(error) { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </div>
+      <form
+        action="/products/productRegister<%= data?.id ? '/' + data.id : '' %>"
+        method="post"
+        class="form"
+      >
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          value="<%= data ? data.title : '' %>"
+        />
+        <input
+          type="text"
+          name="brand"
+          placeholder="brand"
+          value="<%= data ? data.brand : '' %>"
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="price"
+          value="<%= data ? data.price : '' %>"
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="description"
+          value="<%= data ? data.description : '' %>"
+        />
+
+        <button type="submit" class="submit-button">Register</button>
+      </form>
+    </div>
+  </body>
+</html>
