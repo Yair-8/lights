@@ -1,5 +1,5 @@
 header {
-  background-color: #238443;
+  background-color: #6a994e;
   color: white;
   padding: 20px;
   text-align: center;
@@ -13,11 +13,11 @@ header {
 
 .nav-list li a {
   color: white;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-list li a:hover {
-  color: #7ff5ba;
+  color: #386641;
 }
 
 .site-title {

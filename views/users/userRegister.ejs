@@ -41,6 +41,11 @@
           placeholder="Password"
           value="<%= data ? data.password : '' %>"
         />
+        <select name="type">
+          <% types.forEach(type =>{%>
+          <option value="<%=type._id%>"><%=type.title%></option>
+          <%})%>
+        </select>
 
         <button type="submit" class="submit-button">Register</button>
       </form>

@@ -32,6 +32,10 @@ const userSchema = new Schema({
         "Password must contain at least one letter, one number, and one special character",
     },
   },
+  type: {
+    type: Schema.Types.ObjectId,
+    ref: "Type",
+  },
 });
 userSchema.statics.checkDatabaseExists = async () => {
   const databases = await mongoose.connection.listDatabases();

@@ -30,6 +30,14 @@ class ProductsDBService {
       console.error("Error finding product by id:", error);
     }
   }
+  static async getByFilename(filename) {
+    try {
+      return await Product.findOne({ image: filename });
+    } catch (error) {
+      console.error("Error finding product by filename:", err);
+      throw err;
+    }
+  }
   static async update(id, data) {
     try {
       return await Product.findByIdAndUpdate(id, data, {

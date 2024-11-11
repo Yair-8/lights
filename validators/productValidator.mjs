@@ -42,8 +42,8 @@ class ProductValidator {
         errorMessage: "Description is required",
       },
       isLength: {
-        options: { min: 10, max: 500 },
-        errorMessage: "Description must be between 10 and 500 characters",
+        options: { min: 10 },
+        errorMessage: "Description must be not less than 10 characters",
       },
       trim: true, // Видаляє пробіли на початку і в кінці
       escape: true, // Екранує HTML символи

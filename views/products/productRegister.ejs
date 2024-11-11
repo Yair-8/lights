@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/recet-styles.css" />
     <link rel="stylesheet" href="/stylesheets/form.css" />
+    <script src="/javascripts/RequestManager.js"></script>
+    <script>
+      function onInputFile(event) {
+        RequestManager.handleFileSelect(event, "#imgPreview");
+      }
+    </script>
     <title>Document</title>
   </head>
   <body>
@@ -21,6 +27,7 @@
       <form
         action="/products/productRegister<%= data?.id ? '/' + data.id : '' %>"
         method="post"
+        enctype="multipart/form-data"
         class="form"
       >
         <input
@@ -47,6 +54,15 @@
           placeholder="description"
           value="<%= data ? data.description : '' %>"
         />
+        <input
+          type="file"
+          accept="image/"
+          onchange="onInputFile(event)"
+          name="prodImg"
+        />
+        <div>
+          <img id="imgPreview" src="/default-image.jpg" class="image" />
+        </div>
 
         <button type="submit" class="submit-button">Register</button>
       </form>

@@ -8,16 +8,23 @@
     <link rel="stylesheet" href="/stylesheets/recet-styles.css" />
   </head>
   <body>
-    <div class="product-details">
-      <h1 class="product-title">Title: <%= product.title %></h1>
-      <p class="product-brand">Brand: <%= product.brand %></p>
-      <p class="product-price">
-        Price: $ <%= product.price %>
-      </p>
-      <p class="product-description">
-        Description: <%= product.description %>
-      </p>
-      <a href="/products" class="back-link">Back to Products List</a>
-    </div>
+    <section class="container">
+      <div class="product-page">
+        <div class="product-details">
+          <h1 class="product-title">Title: <%= product.title %></h1>
+          <p class="product-brand">Brand: <%= product.brand %></p>
+          <p class="product-price">
+            Price: $ <%= product.price %>
+          </p>
+          <p class="product-description">
+            Description: <%= product.description %>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <a href="/products" class="back-link">Back to Products List</a>
+      </div>
+    </section>
   </body>
 </html>

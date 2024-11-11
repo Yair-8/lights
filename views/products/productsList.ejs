@@ -11,13 +11,15 @@
   <body>
     <div class="wrapper">
       <%- include('../sections/header', {title: 'User form'})%>
-      <main class="page">
+      <main class="container">
         <div class="product">
           <%products.forEach(product=>{%>
           <div class="product-card">
             <a href="/products/<%= product.id %>">
               <div class="item">
-                <div class="product-image"></div>
+                <div class="product-image">
+                  <img src="<%= product.imgSrc %>" />
+                </div>
                 <div class="content">
                   <div class="product-details">
                     <h2 class="product-title">

@@ -25,8 +25,11 @@ const productSchema = new Schema({
     type: String,
     required: [true, "Description is required"],
     minlength: [10, "Description must be at least 3 characters long"],
-    maxlength: [500, "Description must be at most 500 characters long"],
     trim: true,
+  },
+  imgSrc: {
+    type: String,
+    required: [true, "Image is required"],
   },
 });
 productSchema.statics.checkDatabaseExists = async () => {

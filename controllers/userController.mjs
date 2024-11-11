@@ -1,4 +1,5 @@
 import UsersDBService from "../models/user/UsersDBService.mjs";
+import TypesDBService from "../models/type/TypeDBService.mjs";
 import { validationResult } from "express-validator";
 
 class UserController {
@@ -23,10 +24,15 @@ class UserController {
         //отримати об"єкт за id
         user = await UsersDBService.getById(id);
       }
+      const types = await TypesDBService.getList();
+      console.log("===>>> types");
+      console.log(types);
+
       //відредерити сторінку з формою
       res.render("users/userRegister", {
         errors: [],
         data: user,
+        types,
       });
     } catch (err) {
       res.status(500).json({ error: err.message });
@@ -36,15 +42,18 @@ class UserController {
     // Якщо валідація пройшла успішно, виконуємо логіку реєстрації
     const errors = validationResult(req);
     const data = req.body;
+    const types = await TypesDBService.getList();
+
     if (!errors.isEmpty()) {
       if (req.params.id) data.id = req.params.id;
       return res.status(400).render("users/userRegister", {
         errors: errors.array(),
         data,
+        types,
       });
     }
     try {
-      const { email, password, name } = req.body;
+      const { email, password, name, type } = req.body;
       console.log("====>>> req.body");
       console.log(req.body);
       if (req.params.id) {
@@ -53,16 +62,18 @@ class UserController {
           email,
           password,
           name,
+          type,
         });
       } else {
         // Додаємо користувача в базу даних
-        await UsersDBService.create({ email, password, name });
+        await UsersDBService.create({ email, password, name, type });
       }
       res.redirect("/users");
     } catch (err) {
       res.status(500).render("users/userRegister", {
         errors: [{ msg: err.message }],
         data,
+        type,
       });
     }
   }

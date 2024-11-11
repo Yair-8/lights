@@ -60,3 +60,6 @@ input:focus {
   padding: 10px;
   color: red;
 }
+.image {
+  height: 100px;
+}
