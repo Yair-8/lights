@@ -73,7 +73,7 @@ class UserController {
       res.status(500).render("users/userRegister", {
         errors: [{ msg: err.message }],
         data,
-        type,
+        types,
       });
     }
   }
